@@ -46,7 +46,8 @@ class PublisherSeeder extends Seeder
                 "id" => 5,
                 "name" => "Miramax Books",
                 "country" => "United States of America",
-                "founded" => 2000
+                "founded" => 2000,
+                "website" => null
             ]
         ]); 
     }
