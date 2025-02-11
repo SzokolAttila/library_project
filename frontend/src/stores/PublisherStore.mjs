@@ -9,11 +9,11 @@ export const usePublisherStore = defineStore('publisher-store', {
   },
   actions: {
     async getPublishers() {
-      let resp = http.get('publishers');
+      let resp = await http.get('publishers');
       this.publishers = resp.data.data;
     },
     async getPublisher(id){
-      let resp = http.get(`publishers/${id}`);
+      let resp = await http.get(`publishers/${id}`);
       return resp.data.data;
     }
   },

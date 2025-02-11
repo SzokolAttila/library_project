@@ -9,11 +9,11 @@ export const useAuthorStore = defineStore('author-store', {
   },
   actions: {
     async getAuthors() {
-      let resp = http.get('authors');
+      let resp = await http.get('authors');
       this.authors = resp.data.data;
     },
     async getAuthor(id){
-      let resp = http.get(`authors/${id}`);
+      let resp = await http.get(`authors/${id}`);
       return resp.data.data;
     }
   },
