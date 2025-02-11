@@ -16,17 +16,17 @@ export const useBookStore = defineStore('book-store', {
       let resp = await http.post('books', data);
       this.books.push(resp.data.data);
     },
-    async getBook(id){
-      let resp = await http.get(`books/${id}`);
+    async getBook(isbn){
+      let resp = await http.get(`books/${isbn}`);
       return resp.data.data;
     },
-    async putBook(id, data){
-      let resp = await http.put(`books/${id}`, data);
-      this.books.splice(this.books.findIndex((book) => book.id === id), 1, resp.data.data);
+    async putBook(isbn, data){
+      let resp = await http.put(`books/${isbn}`, data);
+      this.books.splice(this.books.findIndex((book) => book.isbn === isbn), 1, resp.data.data);
     },
-    async deleteBook(id){
-      await http.delete(`books/${id}`);
-      this.books.splice(this.books.findIndex((book) => book.id === id), 1);
+    async deleteBook(isbn){
+      await http.delete(`books/${isbn}`);
+      this.books.splice(this.books.findIndex((book) => book.isbn === isbn), 1);
     }
   }
 })

@@ -1,26 +1,33 @@
 <template>
   <BaseLayout>
-    <h1 class="text-6xl my-10">Hello!</h1>
-    <button class="bg-blue-500 text-white rounded py-2 px-4" @click="increment()">
-      Számláló: {{ counter }}
-    </button>
+    <h1 class="my-8 text-center text-6xl">
+      Books
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <BookCard v-for="book in books" :key="book.isbn" :book />
+    </div>
   </BaseLayout>
 </template>
 
 <script>
 import BaseLayout from '@layouts/BaseLayout.vue'
-import { useCounter } from '@stores/CounterStore.mjs'
-import { mapState, mapActions } from 'pinia'
+import BookCard from '@components/BookCard.vue';
+import { mapState } from 'pinia';
+import { useBookStore} from '@stores/BookStore';
 
 export default {
-  components: {
-    BaseLayout
-  },
   computed: {
-    ...mapState(useCounter, ['counter'])
+    ...mapState(useBookStore, ["books"])
   },
-  methods: {
-    ...mapActions(useCounter, ['increment'])
-  }
+  components: {
+    BaseLayout,
+    BookCard
+  },
 }
 </script>
+
+<route lang="json">
+  {
+    "name": "home"
+  }
+</route>
