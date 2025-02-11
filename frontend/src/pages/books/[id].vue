@@ -34,16 +34,16 @@ export default{
     methods:{
         ...mapActions(useBookStore, ['getBook', 'putBook', 'deleteBook']),
         async sendForm(data){
-            await this.putBook(this.$router.params.id, data);
+            await this.putBook(this.$route.params.id, data);
             this.$router.push({name: 'home'});
         },
         async deleteBtn(){
-            await this.deleteBook(this.$router.params.id);
+            await this.deleteBook(this.$route.params.id);
             this.$router.push({name: 'home'});
         }
     },
     async mounted(){
-        this.book = await this.getBook(this.$router.params.id);
+        this.book = await this.getBook(this.$route.params.id);
     }
 }
 </script>
