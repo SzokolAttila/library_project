@@ -1,7 +1,7 @@
 <template>
     <FormKit type="form" :actions="false" @submit="sendForm">
         <FormKit type="text" label="Language" name="language" validation="alpha|required|length:4,30">{{book.language}}</FormKit>
-        <FormKit type="text" label="Title" name="title" validation="alphanumeric|required|length:4,80">{{book.title}}</FormKit>
+        <FormKit type="text" label="Title" name="title" validation="alphanumeric|required|length:2,80">{{book.title}}</FormKit>
         <FormKit type="number" label="Pages" name="pages" validation="number|required|min:1">{{book.pages}}</FormKit>
         <FormKit type="date" label="Published date" name="published_date" validation="date_before_or_equal|required">{{book.published_date}}</FormKit>
         <FormKit type="text" label="Description" name="description" validation="alphanumeric|length:0,1000">{{book.description}}</FormKit>

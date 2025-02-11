@@ -25,7 +25,7 @@ class StoreBookRequest extends FormRequest
         return [
             "isbn" => ["required", "string", "size:13"],
             "language" => ["required", "string", "max:30"],
-            "title" => ["required", "string", "max:80"],
+            "title" => ["required", "string", "between:2,80"],
             "pages" => ["required", "integer"],
             "published_date" => ["required", "date", Rule::date()->before(today())],
             "description" => ["nullable", "string", "max:1000"],
