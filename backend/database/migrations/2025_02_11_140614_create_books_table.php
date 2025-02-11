@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId("genre_id")->constrained();
             $table->foreignId("author_id")->constrained();
             $table->foreignId("publisher_id")->constrained();
-            $table->text("description");
+            $table->text("description")->nullable()->default(null);
             $table->primary("isbn");
         });
     }
