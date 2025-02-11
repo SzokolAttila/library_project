@@ -4,47 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePublisherRequest;
 use App\Http\Requests\UpdatePublisherRequest;
+use App\Http\Resources\PublisherResource;
 use App\Models\Publisher;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class PublisherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : JsonResource
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorePublisherRequest $request)
-    {
-        //
+        return PublisherResource::collection(Publisher::with("books")->get());
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Publisher $publisher)
+    public function show(Publisher $publisher) : JsonResource
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePublisherRequest $request, Publisher $publisher)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Publisher $publisher)
-    {
-        //
+        return new PublisherResource($publisher->load("books"));
     }
 }
