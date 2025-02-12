@@ -1,16 +1,19 @@
 <template>
-    <FormKit type="form" :actions="false" @submit="sendForm">
-        <FormKit type="text" label="Language" name="language" validation="alpha|required|length:4,30">{{book.language}}</FormKit>
-        <FormKit type="text" label="Title" name="title" validation="alphanumeric|required|length:2,80">{{book.title}}</FormKit>
-        <FormKit type="number" label="Pages" name="pages" validation="number|required|min:1">{{book.pages}}</FormKit>
-        <FormKit type="date" label="Published date" name="published_date" validation="date_before_or_equal|required">{{book.published_date}}</FormKit>
-        <FormKit type="text" label="Description" name="description" validation="alphanumeric|length:0,1000">{{book.description}}</FormKit>
-        <FormKit type="select" label="Genre" name="genre_id" :options="genreOptions" :selected="book.genre.id"/>
-        <FormKit type="select" label="Author" name="author_id" :options="authorOptions" :selected="book.author.id"/>
-        <FormKit type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :selected="book.publisher.id"/>
-        <FormKit type="submit">Modify</FormKit>
-        <FormKit type="button" @click="deleteBtn">Delete</FormKit>
-    </FormKit>
+    <BaseLayout>
+        <BaseSpinner class="mx-auto mt-10" v-if="loading"></BaseSpinner>
+        <FormKit class="w-[70%] mx-auto" type="form" :actions="false" @submit="sendForm" v-else>
+            <FormKit input-class="w-full" type="text" label="Language" name="language" validation="alpha|required|length:4,30" :value="book.language"></FormKit>
+            <FormKit input-class="w-full" type="text" label="Title" name="title" validation="required|length:2,80" :value="book.title"></FormKit>
+            <FormKit input-class="w-full" type="number" label="Pages" name="pages" validation="number|required|min:1" :value="book.pages"></FormKit>
+            <FormKit input-class="w-full" type="date" label="Published date" name="published_date" validation="date_before_or_equal|required" :value="book.published_date"></FormKit>
+            <FormKit input-class="w-full" type="text" label="Description" name="description" validation="length:0,1000" :value="book.description"></FormKit>
+            <FormKit input-class="w-full" type="select" label="Genre" name="genre_id" :options="genreOptions" :value="book.genre.id"/>
+            <FormKit input-class="w-full" type="select" label="Author" name="author_id" :options="authorOptions" :value="book.author.id"/>
+            <FormKit input-class="w-full" type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :value="book.publisher.id"/>
+            <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-yellow-500 font-bold" type="submit">Modify</FormKit>
+            <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-red-500 text-white font-bold" type="button" @click="deleteBtn">Delete</FormKit>
+        </FormKit>
+    </BaseLayout>
 </template>
 
 <script>
@@ -19,11 +22,14 @@ import {useAuthorStore} from '@stores/AuthorStore.mjs'
 import {usePublisherStore} from '@stores/PublisherStore.mjs'
 import {useBookStore} from '@stores/BookStore.mjs'
 import { mapActions, mapState } from 'pinia'
+import BaseSpinner from '@components/layout/BaseSpinner.vue'
+import BaseLayout from '@layouts/BaseLayout.vue'
 
 export default{
     data(){
         return {
-            book: {}
+            book: {},
+            loading: true
         }
     },
     computed:{
@@ -44,6 +50,11 @@ export default{
     },
     async mounted(){
         this.book = await this.getBook(this.$route.params.id);
+        this.loading = false;
+    },
+    components:{
+        BaseLayout,
+        BaseSpinner
     }
 }
 </script>

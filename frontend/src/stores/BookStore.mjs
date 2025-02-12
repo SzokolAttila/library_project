@@ -21,7 +21,8 @@ export const useBookStore = defineStore('book-store', {
       return resp.data.data;
     },
     async putBook(isbn, data){
-      let resp = await http.put(`books/${isbn}`, data);
+      console.log(data)
+      let resp = await http.put(`books/${isbn}`, JSON.stringify(data));
       this.books.splice(this.books.findIndex((book) => book.isbn === isbn), 1, resp.data.data);
     },
     async deleteBook(isbn){

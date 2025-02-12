@@ -26,7 +26,7 @@ class UpdateBookRequest extends FormRequest
             "language" => ["required", "string", "max:30"],
             "title" => ["required", "string", "between:2,80"],
             "pages" => ["required", "integer"],
-            "published_date" => ["required", "date", Rule::date()->before(today())],
+            "published_date" => ["required", "date", "before:today"],
             "description" => ["nullable", "string", "max:1000"],
             "genre_id" => ["required", "integer", "exists:genres,id"],
             "author_id" => ["required", "integer", "exists:authors,id"],
