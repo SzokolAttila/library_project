@@ -3,7 +3,7 @@
     <h1 class="my-8 text-center text-6xl">
       Books
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <BookCard v-for="book in books" :key="book.isbn" :book />
     </div>
   </BaseLayout>

@@ -1,5 +1,6 @@
 <template>
-    <div class="border border-orange-400 rounded-md flex flex-col flex-nowrap justify-between">
+    <BaseSpinner v-if="book.isbn == 0" class="mx-auto m-5"/>
+    <div v-else class="border border-orange-400 rounded-md flex flex-col flex-nowrap justify-between">
         <h5 class="text-center bg-orange-400 rounded-t-md p-2 text-xl">
             {{ book.title }}
         </h5>
@@ -15,9 +16,13 @@
 </template>
 
 <script>
+import BaseSpinner from '@components/layout/BaseSpinner.vue';
 export default {
     props: {
         book: Object
+    },
+    components: {
+        BaseSpinner
     }
 }
 </script>

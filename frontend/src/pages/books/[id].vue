@@ -1,7 +1,7 @@
 <template>
     <BaseLayout>
         <BaseSpinner class="mx-auto mt-10" v-if="loading"></BaseSpinner>
-        <FormKit class="w-[70%] mx-auto" type="form" :actions="false" @submit="sendForm" v-else>
+        <FormKit type="form" :actions="false" @submit="sendForm" v-else>
             <FormKit input-class="w-full" type="text" label="Language" name="language" validation="alpha|required|length:4,30" :value="book.language"></FormKit>
             <FormKit input-class="w-full" type="text" label="Title" name="title" validation="required|length:2,80" :value="book.title"></FormKit>
             <FormKit input-class="w-full" type="number" label="Pages" name="pages" validation="number|required|min:1" :value="book.pages"></FormKit>

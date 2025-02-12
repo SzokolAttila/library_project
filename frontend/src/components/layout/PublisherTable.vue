@@ -10,9 +10,9 @@
         <tbody>
             <tr v-for="publisher in publishers" :key="publisher.id" class="odd:bg-orange-400 even:bg-orange-100">
                 <td class="p-2" v-if="publisher.website != null">
-                    <RouterLink :to="publisher.website">
+                    <a :href="publisher.website">
                         {{ publisher.name }}
-                    </RouterLink>
+                    </a>
                 </td>
                 <td class="p-2" v-else>
                     {{ publisher.name }}

@@ -2,18 +2,39 @@
 <BaseLayout>
     <h1 class="text-center my-8 text-6xl">Create a new book</h1>
     <FormKit type="form" :actions="false" @submit="submit" :classes="{
-        inner: 'w-[80%] mx-auto'
+      form: 'w-[80%] mx-auto',
     }">
-        <FormKit type="text" label="ISBN" name="isbn" validation="alphanumeric|required|length:13"/>
-        <FormKit type="text" label="Language" name="language" validation="alpha|required|length:4,30"/>
-        <FormKit type="text" label="Title" name="title" validation="string|required|length:2,80"/>
-        <FormKit type="number" label="Pages" name="pages" validation="number|required|min:1"/>
-        <FormKit type="date" label="Published date" name="published_date" validation="date_before_or_equal|required"/>
-        <FormKit type="textarea" label="Description" name="description" validation="alphanumeric|length:0,1000"/>
-        <FormKit type="select" label="Genre" name="genre_id" :options="genreOptions"/>
-        <FormKit type="select" label="Author" name="author_id" :options="authorOptions"/>
-        <FormKit type="select" label="Publisher" name="publisher_id" :options="publisherOptions"/>
-        <FormKit type="submit">Create</FormKit>
+        <FormKit type="text" label="ISBN" name="isbn" validation="alphanumeric|required|length:13,13" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="text" label="Language" name="language" validation="alpha|required|length:4,30" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="text" label="Title" name="title" validation="string|required|length:2,80" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="number" label="Pages" name="pages" validation="number|required|min:1" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="date" label="Published date" name="published_date" validation="date_before_or_equal|required" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="textarea" label="Description" name="description" validation="alphanumeric|length:0,1000" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="select" label="Genre" name="genre_id" :options="genreOptions" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="select" label="Author" name="author_id" :options="authorOptions" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :classes="{
+            wrapper: 'block mx-auto'
+        }"/>
+        <FormKit type="submit" :classes="{
+            wrapper: 'w-fit block mx-auto',
+            input: 'bg-orange-400'
+        }">Create</FormKit>
     </FormKit>
 </BaseLayout>
 </template>

@@ -10,6 +10,14 @@ export default{
     await useAuthorStore().getAuthors();
     await usePublisherStore().getPublishers();
     await useBookStore().getBooks();
+  },
+  watch: {
+    async $route(){
+      await useGenreStore().getGenres();
+      await useAuthorStore().getAuthors();
+      await usePublisherStore().getPublishers();
+      await useBookStore().getBooks();
+    }
   }
 }
 </script>
