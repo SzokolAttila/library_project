@@ -1,17 +1,17 @@
 <template>
     <table>
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Nationality</th>
-                <th>Birth Date</th>
+            <tr class="bg-orange-100">
+                <th class="p-2 text-left">Name</th>
+                <th class="p-2 text-left">Nationality</th>
+                <th class="p-2 text-left">Birth Date</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="author of authors" class="odd:bg-orange-400 even:bg-orange-100">
-                <td>{{ author.name }}</td>
-                <td>{{ author.nationality }}</td>
-                <td>{{ author.birth_date }}</td>
+                <td class="p-2">{{ author.name }}</td>
+                <td class="p-2">{{ author.nationality }}</td>
+                <td class="p-2">{{ author.birth_date }}</td>
             </tr>
         </tbody>
     </table>

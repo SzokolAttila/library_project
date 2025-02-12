@@ -1,5 +1,5 @@
 <template>
-    <table class="w-full">
+    <table class="w-[80%] mx-auto">
         <thead>
             <tr>
                 <th class="p-2 text-left bg-orange-100">Name</th>

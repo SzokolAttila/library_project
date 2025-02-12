@@ -1,6 +1,6 @@
 <template>
     <BaseLayout>
-        <h1 class="text-4xl m-4 font-bold">All Authors</h1>
+        <h1 class="text-6xl text-center my-8">All Authors</h1>
         <AuthorTable class="w-[80%] mx-auto"></AuthorTable>
     </BaseLayout>
 </template>

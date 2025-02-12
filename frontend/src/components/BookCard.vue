@@ -3,7 +3,7 @@
         <h5 class="text-center bg-orange-400 rounded-t-md p-2 text-xl">
             {{ book.title }}
         </h5>
-        <p class="text-center py-3">
+        <p class="text-center p-3">
             {{ book.author.name }} - {{ book.genre.name }} ({{ book.published_date }})
         </p>
         <div >

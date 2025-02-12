@@ -6,7 +6,7 @@
             <FormKit input-class="w-full" type="text" label="Title" name="title" validation="required|length:2,80" :value="book.title"></FormKit>
             <FormKit input-class="w-full" type="number" label="Pages" name="pages" validation="number|required|min:1" :value="book.pages"></FormKit>
             <FormKit input-class="w-full" type="date" label="Published date" name="published_date" validation="date_before_or_equal|required" :value="book.published_date"></FormKit>
-            <FormKit input-class="w-full" type="text" label="Description" name="description" validation="length:0,1000" :value="book.description"></FormKit>
+            <FormKit input-class="w-full" type="textarea" label="Description" name="description" validation="length:0,1000" :value="book.description"></FormKit>
             <FormKit input-class="w-full" type="select" label="Genre" name="genre_id" :options="genreOptions" :value="book.genre.id"/>
             <FormKit input-class="w-full" type="select" label="Author" name="author_id" :options="authorOptions" :value="book.author.id"/>
             <FormKit input-class="w-full" type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :value="book.publisher.id"/>

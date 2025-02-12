@@ -6,7 +6,7 @@
         <FormKit type="text" label="Title" name="title" validation="alphanumeric|required|length:2,80"/>
         <FormKit type="number" label="Pages" name="pages" validation="number|required|min:1"/>
         <FormKit type="date" label="Published date" name="published_date" validation="date_before_or_equal|required"/>
-        <FormKit type="text" label="Description" name="description" validation="alphanumeric|length:0,1000"/>
+        <FormKit type="textarea" label="Description" name="description" validation="alphanumeric|length:0,1000"/>
         <FormKit type="select" label="Genre" name="genre_id" :options="genreOptions"/>
         <FormKit type="select" label="Author" name="author_id" :options="authorOptions"/>
         <FormKit type="select" label="Publisher" name="publisher_id" :options="publisherOptions"/>
@@ -18,10 +18,18 @@
 <script>
 import BaseLayout from '@layouts/BaseLayout.vue';
 import { useBookStore } from '@stores/BookStore.mjs';
-import { mapActions } from 'pinia';
+import { useGenreStore } from '@stores/GenreStore';
+import { usePublisherStore } from '@stores/PublisherStore';
+import { useAuthorStore } from '@stores/AuthorStore';
+import { mapActions, mapState } from 'pinia';
 export default {
     components: {
         BaseLayout
+    },
+    computed: {
+        ...mapState(useAuthorStore, ["authorOptions"]),
+        ...mapState(usePublisherStore, ["publisherOptions"]),
+        ...mapState(useGenreStore, ["genreOptions"]),
     },
     methods: {
         ...mapActions(useBookStore, ["postBook"]),
