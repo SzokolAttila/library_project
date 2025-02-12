@@ -23,7 +23,7 @@ class StoreBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "isbn" => ["required", "string", "size:13"],
+            "isbn" => ["required", "string", "size:13", "unique:books,isbn"],
             "language" => ["required", "string", "max:30"],
             "title" => ["required", "string", "between:2,80"],
             "pages" => ["required", "integer"],

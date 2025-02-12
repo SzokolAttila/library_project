@@ -12,7 +12,7 @@ class Book extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'isbn';
-    protected $fillable = ['title', 'language', 'pages', 'published_date', 'description', 'genre_id', 'author_id', 'publisher_id'];
+    protected $fillable = ['isbn', 'title', 'language', 'pages', 'published_date', 'description', 'genre_id', 'author_id', 'publisher_id'];
 
     public function genre() : BelongsTo{
         return $this->belongsTo(Genre::class);
