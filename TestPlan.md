@@ -1,0 +1,24 @@
+## Selenium Tests
+
+- After initial seeding, 10 cards appear on the main page
+- Clicking on one of the links at the bottom of the card redirects to the book detail (and also update) page 
+- After clicking delete at the bottom, the site is redirected to the main page, with only 9 cards remaining
+- Click on another card, change the title, click modify, the card's title will be replaced with the new title
+- Set language to empty, click out, validation error will pop up saying "Language is required."
+- Click on a card, fill language input with more than 30 characters, click out, validation error message will appear saying "Language must be between 4 and 30 characters."
+- Set language to something less than 4 characters, error will appear saying "Language must be between 4 and 30 characters."
+- Click on title field, fill it with one character, click out, validation error message will appear saying "Title must be between 2 and 80 characters."
+- Set title to something longer than 80 characters, click out, validation error will say "Title must be between 2 and 80 characters."
+- Click on published date, add future date, validation error will appear saying "Published date needs to be today or earlier"
+- Set pages to 0, click out, validation error will pop up saying "Pages must be at least 1."
+- Click on "Create book" (navbar), it redirects to book creation page
+- Leaving ISBN empty will cause an error saying "ISBN is required."
+- Leaving Language empty will cause an error saying "Language is required."
+- Leaving Title empty will cause an error saying "Title is required."
+- Leaving Pages empty will cause an error saying "Pages is required."
+- ISBN must be precisely 13 characters long, otherwise error will appear "ISBN should be 13 characters long."
+- Set title to something longer than 80 characters, click out, validation error will say "Title must be between 2 and 80 characters."
+- Set title to something less than 2 characters, click out, validation error will say "Title must be between 2 and 80 characters."
+- Set language to something less than 4 characters, error will appear saying "Language must be between 4 and 30 characters."
+- Set language to something longer than 30 characters, error will appear saying "Language must be between 4 and 30 characters."
+- Set pages to 0 or negative, click out, validation error will pop up saying "Pages must be at least 1."
