@@ -1,25 +1,36 @@
-# Fullstack 2024
+# Fullstack Library Project
 
-Figyelem! Az `.env.example` fájl a `backend` mappában található, és a `.env` fájl is ott lesz, mert a backend szerves része. Mivel ezt a többi container is használja, így egy hivatkozás jön létre indításkor a projektmappában.
+### Contributors: 
+- Kiss Bálint
+- Szokol Attila
 
-## Indítás
+### Book Routes
 
-A rendszer inicializálását és az első indítását a `start.sh` végzi.
+| Method | Route | Name |
+|--------|-------|------|
+| GET | backend.vm1.test/api/books | books.index |
+| POST | backend.vm1.test/api/books | books.store |
+| GET | backend.vm1.test/api/books/{book} | books.show |
+| PUT | backend.vm1.test/api/books/{book} | books.update |
+| DELETE | backend.vm1.test/api/books/{book} | books.destroy |
 
-```
-./start.sh
-```
+### Genre Routes
 
-## Leállítás
+| Method | Route | Name |
+|--------|-------|------|
+| GET | backend.vm1.test/api/genres | genres.index |
+| GET | backend.vm1.test/api/genres/{genre} | genres.show |
 
-```
-docker compose stop
-```
+### Author Routes
 
-## Eltávolítás
+| Method | Route | Name |
+|--------|-------|------|
+| GET | backend.vm1.test/api/authors | authors.index |
+| GET | backend.vm1.test/api/authors/{author} | authors.show |
 
-```
-docker compose down -v
-```
+### Publisher Routes
 
- - A `-v` hatására a köteteket is törli, így az adatbázisban tárolt adatok is megszűnnek.
+| Method | Route | Name |
+|--------|-------|------|
+| GET | backend.vm1.test/api/publishers | publishers.index |
+| GET | backend.vm1.test/api/publishers/{publisher} | publishers.show |
