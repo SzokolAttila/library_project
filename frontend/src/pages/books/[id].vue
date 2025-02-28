@@ -1,18 +1,21 @@
 <template>
     <BaseLayout>
         <BaseSpinner class="mx-auto mt-10" v-if="loading"></BaseSpinner>
-        <FormKit type="form" :actions="false" @submit="sendForm" v-else>
-            <FormKit input-class="w-full" type="text" label="Language" name="language" validation="alpha|required|length:4,30" :value="book.language"></FormKit>
-            <FormKit input-class="w-full" type="text" label="Title" name="title" validation="required|length:2,80" :value="book.title"></FormKit>
-            <FormKit input-class="w-full" type="number" label="Pages" name="pages" validation="number|required|min:1" :value="book.pages"></FormKit>
-            <FormKit input-class="w-full" type="date" label="Published date" name="published_date" validation="date_before_or_equal|required" :value="book.published_date"></FormKit>
-            <FormKit input-class="w-full" type="textarea" label="Description" name="description" validation="length:0,1000" :value="book.description"></FormKit>
-            <FormKit input-class="w-full" type="select" label="Genre" name="genre_id" :options="genreOptions" :value="book.genre.id"/>
-            <FormKit input-class="w-full" type="select" label="Author" name="author_id" :options="authorOptions" :value="book.author.id"/>
-            <FormKit input-class="w-full" type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :value="book.publisher.id"/>
-            <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-yellow-500 font-bold" type="submit">Modify</FormKit>
-            <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-red-500 text-white font-bold" type="button" @click="deleteBtn">Delete</FormKit>
-        </FormKit>
+        <div v-else>
+            <h1 class="text-center text-6xl my-8">{{ book.author.name }} - {{ book.title }}</h1>
+            <FormKit type="form" :actions="false" @submit="sendForm" >
+                <FormKit input-class="w-full" type="text" label="Language" name="language" validation="alpha|required|length:4,30" :value="book.language" validation-visibility="live"></FormKit>
+                <FormKit input-class="w-full" type="text" label="Title" name="title" validation="required|length:2,80" :value="book.title" validation-visibility="live"></FormKit>
+                <FormKit input-class="w-full" type="number" label="Pages" name="pages" validation="number|required|min:1" :value="book.pages" validation-visibility="live"></FormKit>
+                <FormKit input-class="w-full" type="date" label="Published date" name="published_date" validation="beforeOrEqualToday|required" :value="book.published_date" validation-visibility="live"></FormKit>
+                <FormKit input-class="w-full" type="textarea" label="Description" name="description" validation="length:0,1000" :value="book.description" validation-visibility="live"></FormKit>
+                <FormKit input-class="w-full" type="select" label="Genre" name="genre_id" :options="genreOptions" :value="book.genre.id"/>
+                <FormKit input-class="w-full" type="select" label="Author" name="author_id" :options="authorOptions" :value="book.author.id"/>
+                <FormKit input-class="w-full" type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :value="book.publisher.id"/>
+                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-yellow-500 font-bold" type="submit">Modify</FormKit>
+                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-red-500 text-white font-bold" type="button" @click="deleteBtn">Delete</FormKit>
+            </FormKit>
+        </div>
     </BaseLayout>
 </template>
 

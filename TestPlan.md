@@ -9,7 +9,7 @@
 - Set language to something less than 4 characters, error will appear saying "Language must be between 4 and 30 characters."
 - Click on title field, fill it with one character, click out, validation error message will appear saying "Title must be between 2 and 80 characters."
 - Set title to something longer than 80 characters, click out, validation error will say "Title must be between 2 and 80 characters."
-- Click on published date, add future date, validation error will appear saying "Published date needs to be today or earlier"
+- Click on published date, add future date, validation error will appear saying "Published date must be today or earlier"
 - Set pages to 0, click out, validation error will pop up saying "Pages must be at least 1."
 - Click on "Create book" (navbar), it redirects to book creation page
 - Leaving ISBN empty will cause an error saying "ISBN is required."
