@@ -1,3 +1,6 @@
 **/*/node_modules
 .env
 .DS_Store
+/tests/LibrarySeleniumTests/.vs
+/tests/LibrarySeleniumTests/LibrarySeleniumTests/bin
+/tests/LibrarySeleniumTests/LibrarySeleniumTests/obj
