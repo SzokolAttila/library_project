@@ -12,6 +12,7 @@ namespace LibrarySeleniumTests
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://frontend.vm1.test/");
+            Thread.Sleep(5000);
         }
 
         [TestMethod]
