@@ -4,7 +4,7 @@
       Books
     </h1>
     <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <BookCard v-for="book in books" :key="book.isbn" :book />
+      <BookCard v-for="book in books" :key="book.isbn" :book class="book-card"/>
     </div>
   </BaseLayout>
 </template>

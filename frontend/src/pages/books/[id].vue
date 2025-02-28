@@ -12,8 +12,8 @@
                 <FormKit input-class="w-full" type="select" label="Genre" name="genre_id" :options="genreOptions" :value="book.genre.id"/>
                 <FormKit input-class="w-full" type="select" label="Author" name="author_id" :options="authorOptions" :value="book.author.id"/>
                 <FormKit input-class="w-full" type="select" label="Publisher" name="publisher_id" :options="publisherOptions" :value="book.publisher.id"/>
-                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-yellow-500 font-bold" type="submit">Modify</FormKit>
-                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-red-500 text-white font-bold" type="button" @click="deleteBtn">Delete</FormKit>
+                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-yellow-500 font-bold" id="edit-button" type="submit">Modify</FormKit>
+                <FormKit input-class="w-full mx-auto m-2 p-2 rounded text-center bg-red-500 text-white font-bold" id="delete-button" type="button" @click="deleteBtn">Delete</FormKit>
             </FormKit>
         </div>
     </BaseLayout>

@@ -11,7 +11,7 @@
         <FormKit type="select" label="Genre" name="genre_id" :options="genreOptions" />
         <FormKit type="select" label="Author" name="author_id" :options="authorOptions"/>
         <FormKit type="select" label="Publisher" name="publisher_id" :options="publisherOptions"/>
-        <FormKit type="submit">Create</FormKit>
+        <FormKit type="submit" id="create-button">Create</FormKit>
     </FormKit>
 </BaseLayout>
 </template>

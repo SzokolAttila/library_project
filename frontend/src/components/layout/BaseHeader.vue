@@ -25,7 +25,7 @@
         <ul class="flex flex-col p-4 md:flex-row md:p-0 md:space-x-8">
           <li class="block py-2 px-3 text-gray-500 hover:bg-orange-600 hover:text-white rounded p-2 has-[.active]:text-black has-[.active]:hover:text-white"><RouterLink :to="{name: 'publishers'}">Publishers</RouterLink></li>
           <li class="block py-2 px-3 text-gray-500 hover:bg-orange-600 hover:text-white rounded p-2 has-[.active]:text-black has-[.active]:hover:text-white"><RouterLink :to="{name: 'authors'}">Authors</RouterLink></li>
-          <li class="block py-2 px-3 text-gray-500 hover:bg-orange-600 hover:text-white rounded p-2 has-[.active]:text-black has-[.active]:hover:text-white"><RouterLink :to="{name: 'create-book'}">Create book</RouterLink></li>
+          <li class="block py-2 px-3 text-gray-500 hover:bg-orange-600 hover:text-white rounded p-2 has-[.active]:text-black has-[.active]:hover:text-white"><RouterLink :to="{name: 'create-book'}" id="create-book">Create book</RouterLink></li>
         </ul>
       </div>
     </div>
